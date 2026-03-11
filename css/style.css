@@ -64,8 +64,24 @@ header nav a:focus {
   position: relative;
   text-align: center;
   color: white;
-  margin: 0;                /* no external whitespace above or below image */
-  padding: 0;               /* image fills container completely */
+  margin: 0;
+  padding: 0;
+}
+
+/* hero used on pages with no background photo (contact) */
+.hero.hero-text-only {
+  background-color: #1e90ff;
+  padding: 4rem 1rem;
+}
+
+.hero.hero-text-only .hero-text {
+  position: static;
+  transform: none;
+  background: none;
+  color: white;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero img {
@@ -76,6 +92,15 @@ header nav a:focus {
   display: block;
 }
 
+@media (max-width: 599px) {
+  .hero img {
+    max-height: 400px; /* shorten image on phones */
+  }
+  .hero .hero-text {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
 .hero .hero-text {
   position: absolute;
   top: 55%;                /* slightly lower to clear header if overlapping */
@@ -191,6 +216,41 @@ ul {
   padding-left: 0;
 }
 
+/* ==============================
+   Forms
+   ============================== */
+form.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form.card label {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+form.card input,
+form.card textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form.card input:focus,
+form.card textarea:focus {
+  outline: 2px solid #1e90ff;
+  border-color: #1e90ff;
+}
+
+form.card button {
+  align-self: flex-start;
+  cursor: pointer;
+}
+
 ul li {
   margin-bottom: 0.5rem;
 }
@@ -230,6 +290,14 @@ footer a.footer-link {
 /* ==============================
    Responsive: Mobile First
    ============================== */
+/* base padding for small viewports */
+main {
+  padding: 0 1rem;
+}
+/* smaller heading in the hero on tiny screens */
+.hero .hero-text h2 {
+  font-size: 1.5rem;
+}
 @media (min-width: 600px) {
   header {
     flex-direction: row;
@@ -238,6 +306,10 @@ footer a.footer-link {
 
   .hero .hero-text {
     padding: 3rem;
+  }
+
+  .hero .hero-text h2 {
+    font-size: 2rem;
   }
 
   .card {
