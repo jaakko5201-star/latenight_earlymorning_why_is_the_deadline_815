@@ -1,106 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interrail Planner - Routes</title>
-  <meta name="description" content="Explore popular Interrail routes across Europe with detailed tips and maps.">
-  <link rel="icon" href="favicon.ico">
-  <meta name="theme-color" content="#1e90ff">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-  <!-- Header -->
-  <header>
-    <h1>Interrail Planner</h1>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">☰</button>
-    <nav id="main-nav" aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="routes.html" aria-current="page">Routes</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Route Cards -->
+<section class="card-grid route-cards">
+  <h2>Suggested Routes</h2>
 
-  <!-- Main content -->
-  <main id="main">
-    <!-- Hero Section -->
-    <section class="hero">
-      <img src="images/routes/routephoto_index.jpeg" alt="Interrail train crossing European landscape">
-      <div class="hero-text">
-        <h2>Popular Interrail Routes</h2>
-        <p>Discover some of the best European journeys and tips for your Interrail adventure.</p>
-      </div>
-    </section>
+  <div class="card calendar-day">
+    <img src="images/routes/paris-berlin.jpeg" alt="Paris to Berlin route illustration" loading="lazy">
+    <h3>Paris – Berlin</h3>
+    <p>From the City of Lights to Germany’s vibrant capital.</p>
+    <button class="expand-news" aria-expanded="false" aria-controls="route1-details" aria-label="Expand details">+</button>
+    <div id="route1-details" class="events hidden" aria-hidden="true">
+      <p>Duration: 4 days</p>
+      <p>Highlights: Eiffel Tower, Brandenburg Gate, Museums.</p>
+      <p>Tip: Book high-speed trains in advance for best seats.</p>
+    </div>
+    <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">More Info</a>
+  </div>
 
-    <!-- Route Cards -->
-    <section class="route-cards">
-      <h2>Suggested Routes</h2>
+  <div class="card calendar-day">
+    <img src="images/routes/rome-vienna.jpeg" alt="Rome to Vienna route illustration" loading="lazy">
+    <h3>Rome – Vienna</h3>
+    <p>Explore Italy’s historic heart and Austria’s imperial charm.</p>
+    <button class="expand-news" aria-expanded="false" aria-controls="route2-details" aria-label="Expand details">+</button>
+    <div id="route2-details" class="events hidden" aria-hidden="true">
+      <p>Duration: 5 days</p>
+      <p>Highlights: Colosseum, Schönbrunn Palace, local cuisine.</p>
+      <p>Tip: Try night trains to maximize daytime sightseeing.</p>
+    </div>
+    <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">More Info</a>
+  </div>
 
-      <div class="card calendar-day">
-        <img src="images/routes/paris-berlin.jpeg" alt="Paris to Berlin route illustration" loading="lazy">
-        <h3>Paris – Berlin</h3>
-        <p>From the City of Lights to Germany’s vibrant capital.</p>
-        <button class="expand-news" aria-expanded="false" aria-controls="route1-details" aria-label="Expand details">+</button>
-        <div id="route1-details" class="events hidden" aria-hidden="true">
-          <p>Duration: 4 days</p>
-          <p>Highlights: Eiffel Tower, Brandenburg Gate, Museums.</p>
-          <p>Tip: Book high-speed trains in advance for best seats.</p>
-        </div>
-        <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">More Info</a>
-      </div>
+  <div class="card calendar-day">
+    <img src="images/routes/amsterdam-prague.jpeg" alt="Amsterdam to Prague route illustration" loading="lazy">
+    <h3>Amsterdam – Prague</h3>
+    <p>Experience canals, castles, and coffee culture on this journey.</p>
+    <button class="expand-news" aria-expanded="false" aria-controls="route3-details" aria-label="Expand details">+</button>
+    <div id="route3-details" class="events hidden" aria-hidden="true">
+      <p>Duration: 6 days</p>
+      <p>Highlights: Canal tours, Prague Castle, street art.</p>
+      <p>Tip: Book accommodations near train stations for convenience.</p>
+    </div>
+    <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">More Info</a>
+  </div>
 
-      <div class="card calendar-day">
-        <img src="images/routes/rome-vienna.jpeg" alt="Rome to Vienna route illustration" loading="lazy">
-        <h3>Rome – Vienna</h3>
-        <p>Explore Italy’s historic heart and Austria’s imperial charm.</p>
-        <button class="expand-news" aria-expanded="false" aria-controls="route2-details" aria-label="Expand details">+</button>
-        <div id="route2-details" class="events hidden" aria-hidden="true">
-          <p>Duration: 5 days</p>
-          <p>Highlights: Colosseum, Schönbrunn Palace, local cuisine.</p>
-          <p>Tip: Try night trains to maximize daytime sightseeing.</p>
-        </div>
-        <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">More Info</a>
-      </div>
+  <div class="card calendar-day">
+    <img src="images/routes/barcelona-zurich.jpeg" alt="Barcelona to Zurich route illustration" loading="lazy">
+    <h3>Barcelona – Zurich</h3>
+    <p>From Mediterranean beaches to Swiss Alps.</p>
+    <button class="expand-news" aria-expanded="false" aria-controls="route4-details" aria-label="Expand details">+</button>
+    <div id="route4-details" class="events hidden" aria-hidden="true">
+      <p>Duration: 5 days</p>
+      <p>Highlights: Sagrada Familia, Lake Zurich, mountain hikes.</p>
+      <p>Tip: Bring layers; weather can change quickly in the Alps.</p>
+    </div>
+    <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">More Info</a>
+  </div>
 
-      <div class="card calendar-day">
-        <img src="images/routes/amsterdam-prague.jpeg" alt="Amsterdam to Prague route illustration" loading="lazy">
-        <h3>Amsterdam – Prague</h3>
-        <p>Experience canals, castles, and coffee culture on this journey.</p>
-        <button class="expand-news" aria-expanded="false" aria-controls="route3-details" aria-label="Expand details">+</button>
-        <div id="route3-details" class="events hidden" aria-hidden="true">
-          <p>Duration: 6 days</p>
-          <p>Highlights: Canal tours, Prague Castle, street art.</p>
-          <p>Tip: Book accommodations near train stations for convenience.</p>
-        </div>
-        <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">More Info</a>
-      </div>
-
-      <div class="card calendar-day">
-        <img src="images/routes/barcelona-zurich.jpeg" alt="Barcelona to Zurich route illustration" loading="lazy">
-        <h3>Barcelona – Zurich</h3>
-        <p>From Mediterranean beaches to Swiss Alps.</p>
-        <button class="expand-news" aria-expanded="false" aria-controls="route4-details" aria-label="Expand details">+</button>
-        <div id="route4-details" class="events hidden" aria-hidden="true">
-          <p>Duration: 5 days</p>
-          <p>Highlights: Sagrada Familia, Lake Zurich, mountain hikes.</p>
-          <p>Tip: Bring layers; weather can change quickly in the Alps.</p>
-        </div>
-        <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">More Info</a>
-      </div>
-
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 Interrail Planner | <a href="contact.html" class="footer-link">Contact Us</a></p>
-  </footer>
-
-  <!-- JS for expandable route details -->
-  <script src="js/news.js"></script>
-</body>
-</html>
+</section>
