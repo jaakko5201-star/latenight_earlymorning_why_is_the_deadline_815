@@ -62,10 +62,28 @@ header nav a:focus {
    ============================== */
 .hero {
   position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
   text-align: center;
   color: white;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+/* only the image-backed hero needs a height; contact page uses text-only hero */
+.hero:not(.hero-text-only) {
+  min-height: 55vh;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* hero used on pages with no background photo (contact) */
@@ -85,33 +103,25 @@ header nav a:focus {
   margin: 0 auto;
 }
 
-.hero img {
-  width: 100%;
-  height: auto;
-  max-height: 760px; /* doubled vertical space for the photo */
-  object-fit: cover;
-  display: block;
-}
-
 @media (max-width: 599px) {
-  .hero img {
-    max-height: 400px; /* shorten image on phones */
+  .hero:not(.hero-text-only) {
+    min-height: 45vh;
   }
+
   .hero .hero-text {
     width: 90%;
     padding: 1.5rem;
   }
 }
+
 .hero .hero-text {
-  position: absolute;
-  top: 55%;                /* slightly lower to clear header if overlapping */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   background: rgba(30,144,255,0.7);
   padding: 2rem 3rem;
   border-radius: 10px;
   width: 80%;
   max-width: 800px;
+  z-index: 1;
 }
 
 .hero h2 {
