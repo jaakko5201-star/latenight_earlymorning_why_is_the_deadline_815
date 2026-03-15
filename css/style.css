@@ -114,30 +114,26 @@ HERO SECTION
 }
 
 /* ===============================
-ROUTES / NEWS CARDS (Small & Uniform)
+ROUTES / NEWS CARDS - Uniform Size & Two Columns Desktop
 =============================== */
 
 .card-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr; /* mobile first */
+  max-width: 1000px; /* limits total grid width */
+  margin: 0 auto;    /* center grid */
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 900px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* two columns on tablets/desktops */
   }
 }
 
 @media (min-width: 1200px) {
   .card-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* optional three columns on large screens */
   }
 }
 
@@ -149,8 +145,8 @@ ROUTES / NEWS CARDS (Small & Uniform)
   overflow: hidden;
   transition: transform .3s, box-shadow .3s;
   width: 100%;
-  max-width: 260px; /* limits size */
-  margin: 0 auto;   /* centers card in grid cell */
+  display: flex;
+  flex-direction: column; /* ensures image on top, text below */
 }
 
 /* Hover effect */
@@ -162,27 +158,28 @@ ROUTES / NEWS CARDS (Small & Uniform)
 /* Photo container */
 .photo-container {
   width: 100%;
-  height: 140px;  /* slightly smaller, uniform size */
+  aspect-ratio: 16/9; /* ensures all images have same height relative to width */
   overflow: hidden;
+  flex-shrink: 0;      /* prevents shrinking */
 }
 
 .photo-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* crops images consistently */
 }
 
-/* Text padding */
+/* Text inside card */
 .card h3 {
   padding: .6rem .8rem .2rem .8rem;
   margin: 0;
-  font-size: 1rem; /* smaller text for small cards */
+  font-size: 1rem;
 }
 
 .card p {
-  padding: 0 .8rem .8rem .8rem;
+  padding: 0 .8rem ..8rem .8rem;
   margin: 0;
-  font-size: 0.875rem; /* uniform small text */
+  font-size: 0.875rem;
 }
 
 /* ===============================
