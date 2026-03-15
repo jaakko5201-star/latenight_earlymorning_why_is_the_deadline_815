@@ -212,23 +212,21 @@ MUST VISIT STATIONS
 .featured-stations {
   margin-top: 2rem;
 }
-  margin-bottom: 0.7rem;
-}
 
 .featured-stations .btn {
-  margin-top: 1.2rem;
-  margin-top: 1.8rem;
-  margin-bottom: 2.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 .latest-news {
-  margin-top: 2.5rem;
+  margin-top: 4rem;
 }
 
 .station-grid {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr;
+  margin-bottom: 4rem;
 }
 
 .station-card {
