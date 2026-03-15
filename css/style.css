@@ -161,7 +161,7 @@ HERO SECTION
 
 .hero-text {
   position: relative;
-  background: rgba(21, 90, 182, 0.92);
+  background: rgba(21, 90, 182, 0.75);
   padding: 1rem 1.2rem;
   margin-top: 0.5rem;
   border-radius: 10px;
@@ -377,7 +377,7 @@ RESPONSIVE (mobile first)
 
   .hero-text {
     padding: 2rem;
-    background: rgba(21, 90, 182, 0.96);
+    background: rgba(21, 90, 182, 0.82);
   }
 
   .hero h2 {
