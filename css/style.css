@@ -150,7 +150,8 @@ CARDS
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 180px;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: .5rem;
 }
