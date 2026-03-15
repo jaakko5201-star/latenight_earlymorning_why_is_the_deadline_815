@@ -45,6 +45,7 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
 header h1 {
@@ -96,21 +97,55 @@ HERO SECTION
 
 .hero {
   position: relative;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  color: white;
+  display: none;
   overflow: hidden;
   min-height: 28vh;
   margin-bottom: 1.5rem;
+  display: block;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: white;
   width: 100vw;
   max-width: 100vw;
   margin-left: 50%;
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #1e90ff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  nav.open {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block !important;
+    position: relative;
+    z-index: 1100;
+  }
+}
   transform: translateX(-50%);
   padding: 0;
-}
-
-.hero img {
+  .burger, .nav-toggle {
+    display: none !important;
+  }
+  nav {
+    display: flex !important;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+  }
   position: absolute;
   inset: 0;
   width: 100%;
