@@ -94,10 +94,10 @@ header h1 {
 }
 
 nav a {
-  color: white;
+  color: white !important;
 }
 nav a:visited {
-  color: white;
+  color: white !important;
   text-decoration: none;
   font-weight: bold;
   padding: .4rem .8rem;
