@@ -38,8 +38,7 @@ img {
 HEADER
 =============================== */
 
-header {
-  background: #1e90ff;
+  background: #155ab6;
   color: white;
   padding: 1rem;
   display: flex;
@@ -72,7 +71,7 @@ header h1 {
   nav#main-nav {
     display: none;
     flex-direction: column;
-    background: #1e90ff;
+    background: #155ab6;
     position: absolute;
     top: 100%;
     left: 0;
@@ -161,7 +160,7 @@ HERO SECTION
 
 .hero-text {
   position: relative;
-  background: rgba(30, 144, 255, 0.75);
+  background: rgba(21, 90, 182, 0.92);
   padding: 1rem 1.2rem;
   margin-top: 0.5rem;
   border-radius: 10px;
@@ -340,8 +339,7 @@ textarea:focus {
 FOOTER
 =============================== */
 
-footer {
-  background: #1e90ff;
+  background: #155ab6;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -353,11 +351,10 @@ footer {
 ACCESSIBILITY
 =============================== */
 
-.skip-link {
   position: absolute;
   left: -999px;
   top: 0;
-  background: #1e90ff;
+  background: #155ab6;
   color: white;
   padding: .5rem 1rem;
 }
@@ -379,6 +376,7 @@ RESPONSIVE (mobile first)
 
   .hero-text {
     padding: 2rem;
+    background: rgba(21, 90, 182, 0.96);
   }
 
   .hero h2 {
