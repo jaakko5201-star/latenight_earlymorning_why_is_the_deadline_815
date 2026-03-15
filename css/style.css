@@ -11,12 +11,20 @@ html {
   font-family: 'Arial', sans-serif;
   font-size: 16px;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   line-height: 1.6;
   color: #333;
   background-color: #fdfdfd;
+}
+
+main {
+  flex: 1;
 }
 
 /* ==============================
