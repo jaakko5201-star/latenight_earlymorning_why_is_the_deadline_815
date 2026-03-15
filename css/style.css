@@ -59,38 +59,6 @@ header h1 {
   justify-content: center;
 }
 
-@media (max-width: 767px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background: #1e90ff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100vw;
-    z-index: 1000;
-  }
-  nav.open {
-    display: flex;
-  }
-  .nav-toggle {
-    display: block;
-  }
-}
-
-@media (min-width: 768px) {
-  .nav-toggle {
-    display: none !important;
-  }
-  nav {
-    display: flex !important;
-    position: static;
-    width: auto;
-    background: none;
-  }
-}
-
 nav a {
   color: white;
   text-decoration: none;
