@@ -148,6 +148,52 @@ header nav a:focus {
   margin-top: 6rem; /* twice the space under hero */
 }
 
+/* ==============================
+   Station Highlights (Home page unique section)
+   ============================== */
+.featured-stations {
+  margin-top: 6rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3.5rem; /* room for the moving train */
+}
+
+.station-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.station-card {
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.station-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.station-card img {
+  transition: transform 0.3s;
+}
+
+.station-card:hover img {
+  transform: scale(1.05);
+}
+
+
+@media (min-width: 768px) {
+  .station-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .station-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
 .card {
   background-color: #fff;
   border-radius: 10px;
