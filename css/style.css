@@ -25,390 +25,363 @@ body {
 }
 
 main {
-  /* ===============================
-  GLOBAL RESET
-  =============================== */
+  flex: 1;
+  padding: 0 1rem;
+}
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-  html {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    scroll-behavior: smooth;
-  }
+/* ===============================
+HEADER
+=============================== */
 
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    line-height: 1.6;
-    color: #333;
-    background: #fdfdfd;
-  }
+header {
+  background: #1e90ff;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
 
-  main {
-    flex: 1;
-    padding: 0 1rem;
-  }
-
-  img {
-    max-width: 100%;
-    display: block;
-  }
-
-  /* ===============================
-  HEADER
-  =============================== */
-
-  header {
-    background: #1e90ff;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-  }
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    margin: 0.5rem 0 0.5rem auto;
-    z-index: 20;
-  }
-
-  @media (min-width: 768px) {
-    .nav-toggle {
-      display: none !important;
-    }
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-    margin-bottom: .5rem;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  @media (max-width: 767px) {
-    nav#main-nav {
-      display: none;
-      flex-direction: column;
-      background: #1e90ff;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      z-index: 10;
-      padding-bottom: 1rem;
-    }
-    nav#main-nav.open {
-      display: flex;
-    }
-  }
-  }
-
-  nav a {
-    color: white !important;
-    text-decoration: none !important;
-  }
-  nav a:visited,
-  nav a:hover,
-  nav a:active,
-  nav a:focus {
-    color: white !important;
-    text-decoration: underline;
-    text-decoration: none;
-    font-weight: bold;
-    padding: .4rem .8rem;
-    border-radius: 4px;
-    transition: background .3s;
-  }
-
-  nav a:hover,
-  nav a:focus {
-    background: #0f70d0;
-  }
-
-  /* ===============================
-
-  /* ===============================
-  BURGER MENU (mobile only)
-  =============================== */
-
+@media (min-width: 768px) {
   .nav-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    margin: 0.5rem 0 0.5rem auto;
-    z-index: 20;
+    display: none !important;
   }
+}
 
-  @media (min-width:768px) {
-    .burger, .nav-toggle {
-      display: none !important;
-    }
-  }
 
-  /* ===============================
-  HERO SECTION
-  =============================== */
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: .5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  .hero {
-    position: relative;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-    min-height: 28vh;
-    margin-bottom: 1.5rem;
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    padding: 0;
-  }
-
-  .hero img {
+@media (max-width: 767px) {
+  nav#main-nav {
+    display: none;
+    flex-direction: column;
+    background: #1e90ff;
     position: absolute;
-    inset: 0;
+    top: 100%;
+    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
+    z-index: 10;
+    padding-bottom: 1rem;
+  }
+  nav#main-nav.open {
+    display: flex;
+  }
+}
+
+
+nav a {
+  color: white !important;
+  text-decoration: none !important;
+}
+nav a:visited,
+nav a:hover,
+nav a:active,
+nav a:focus {
+  color: white !important;
+  text-decoration: underline;
+  text-decoration: none;
+  font-weight: bold;
+  padding: .4rem .8rem;
+  border-radius: 4px;
+  transition: background .3s;
+}
+nav a:hover,
+nav a:focus {
+  background: #0f70d0;
+}
+
+
+/* ===============================
+BURGER MENU (mobile only)
+=============================== */
+
+.nav-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 0.5rem 0 0.5rem auto;
+  z-index: 20;
+}
+
+@media (min-width:768px) {
+  .burger, .nav-toggle {
+    display: none !important;
+  }
+}
+
+
+/* ===============================
+HERO SECTION
+=============================== */
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  min-height: 28vh;
+  margin-bottom: 1.5rem;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.hero-text {
+  position: relative;
+  background: rgba(30, 144, 255, 0.75);
+  padding: 1rem 1.2rem;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+}
+
+.hero h2 {
+  font-size: 1.6rem;
+  margin-bottom: .5rem;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+
+
+/* ===============================
+CARDS
+=============================== */
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 500px;
+  transition: transform .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: .5rem;
+}
+
+
+/* ===============================
+CARD GRIDS (routes/news)
+=============================== */
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* mobile first */
+}
+
+@media (min-width:768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width:1100px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ===============================
+BUTTONS
+=============================== */
+
+.btn {
+  display: inline-block;
+  background: #1e90ff;
+  color: white;
+  padding: .6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #0f70d0;
+}
+
+
+/* ===============================
+MUST VISIT STATIONS
+=============================== */
+
+.featured-stations {
+  margin-top: 2rem;
+}
+
+.featured-stations .btn {
+  margin-top: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.latest-news {
+  margin-top: 2rem;
+}
+
+.station-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 4rem;
+}
+
+.station-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.station-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.station-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.station-card h3 {
+  padding: .8rem .8rem .2rem .8rem;
+}
+
+.station-card p {
+  padding: 0 .8rem 1rem .8rem;
+}
+
+@media (min-width:768px) {
+  .station-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width:1100px) {
+  .station-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* ===============================
+FORMS
+=============================== */
+
+form.card {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+input,
+textarea {
+  padding: .5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #1e90ff;
+}
+
+
+/* ===============================
+FOOTER
+=============================== */
+
+footer {
+  background: #1e90ff;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+/* ===============================
+ACCESSIBILITY
+=============================== */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #1e90ff;
+  color: white;
+  padding: .5rem 1rem;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+
+/* ===============================
+RESPONSIVE (mobile first)
+=============================== */
+
+@media (min-width:600px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .hero-text {
-    position: relative;
-    background: rgba(30, 144, 255, 0.75);
-    padding: 1rem 1.2rem;
-    margin-top: 0.5rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
+    padding: 2rem;
   }
 
   .hero h2 {
-    font-size: 1.6rem;
-    margin-bottom: .5rem;
+    font-size: 2rem;
   }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  /* ===============================
-  CARDS
-  =============================== */
-
-  .card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 1rem auto;
-    padding: 1rem;
-    max-width: 500px;
-    transition: transform .3s;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-  }
-
-  .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: .5rem;
-  }
-
-  /* ===============================
-  CARD GRIDS (routes/news)
-  =============================== */
-
-  .card-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr; /* mobile first */
-  }
-
-  @media (min-width:768px) {
-    .card-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width:1100px) {
-    .card-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  /* ===============================
-  BUTTONS
-  =============================== */
-
-  .btn {
-    display: inline-block;
-    background: #1e90ff;
-    color: white;
-    padding: .6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .btn:hover,
-  .btn:focus {
-    background: #0f70d0;
-  }
-
-  /* ===============================
-  MUST VISIT STATIONS
-  =============================== */
-
-  .featured-stations {
-    margin-top: 2rem;
-  }
-
-  .featured-stations .btn {
-    margin-top: 2.5rem;
-    margin-bottom: 4rem;
-  }
-
-  .latest-news {
-    margin-top: 2rem;
-  }
-
-  .station-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
-    margin-bottom: 4rem;
-  }
-
-  .station-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform .3s, box-shadow .3s;
-  }
-
-  .station-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-  }
-
-  .station-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-
-  .station-card h3 {
-    padding: .8rem .8rem .2rem .8rem;
-  }
-
-  .station-card p {
-    padding: 0 .8rem 1rem .8rem;
-  }
-
-  @media (min-width:768px) {
-    .station-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width:1100px) {
-    .station-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  /* ===============================
-  FORMS
-  =============================== */
-
-  form.card {
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-  }
-
-  input,
-  textarea {
-    padding: .5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  input:focus,
-  textarea:focus {
-    outline: 2px solid #1e90ff;
-  }
-
-  /* ===============================
-  FOOTER
-  =============================== */
-
-  footer {
-    background: #1e90ff;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-
-  /* ===============================
-  ACCESSIBILITY
-  =============================== */
-
-  .skip-link {
-    position: absolute;
-    left: -999px;
-    top: 0;
-    background: #1e90ff;
-    color: white;
-    padding: .5rem 1rem;
-  }
-
-  .skip-link:focus {
-    left: 0;
-  }
-
-  /* ===============================
-  RESPONSIVE (mobile first)
-  =============================== */
-
-  @media (min-width:600px) {
-    header {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .hero-text {
-      padding: 2rem;
-    }
-
-    .hero h2 {
-      font-size: 2rem;
-    }
-  }
+}
