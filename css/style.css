@@ -210,7 +210,18 @@ MUST VISIT STATIONS
 =============================== */
 
 .featured-stations {
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+  margin-bottom: 0.7rem;
+}
+
+.featured-stations .btn {
+  margin-top: 1.2rem;
+  margin-bottom: 2.2rem;
+}
+
+.latest-news {
+  margin-top: 0;
 }
 
 .station-grid {
