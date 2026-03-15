@@ -85,8 +85,8 @@ BURGER MENU (mobile only)
 }
 
 @media (min-width:768px) {
-  .burger {
-    display: none;
+  .burger, .nav-toggle {
+    display: none !important;
   }
 }
 
@@ -101,7 +101,8 @@ HERO SECTION
   text-align: center;
   color: white;
   overflow: hidden;
-  min-height: 50vh;
+  min-height: 28vh;
+  margin-bottom: 1.5rem;
 }
 
 .hero img {
@@ -115,7 +116,8 @@ HERO SECTION
 .hero-text {
   position: relative;
   background: rgba(30, 144, 255, 0.75);
-  padding: 1.5rem;
+  padding: 1rem 1.2rem;
+  margin-top: 0.5rem;
   border-radius: 10px;
   width: 90%;
   max-width: 800px;
