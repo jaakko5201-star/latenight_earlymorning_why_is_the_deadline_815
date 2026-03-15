@@ -114,43 +114,55 @@ HERO SECTION
 }
 
 /* ===============================
-ROUTES / NEWS CARDS
+ROUTES / NEWS CARDS (Small & Uniform)
 =============================== */
 
 .card-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
   grid-template-columns: 1fr; /* mobile first */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
   .card-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
+/* Card styling */
 .card {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  overflow: hidden; /* ensures images stay inside rounded corners */
+  overflow: hidden;
   transition: transform .3s, box-shadow .3s;
+  width: 100%;
+  max-width: 260px; /* limits size */
+  margin: 0 auto;   /* centers card in grid cell */
 }
 
+/* Hover effect */
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
+/* Photo container */
 .photo-container {
   width: 100%;
-  height: 180px;
+  height: 140px;  /* slightly smaller, uniform size */
   overflow: hidden;
 }
 
@@ -160,15 +172,17 @@ ROUTES / NEWS CARDS
   object-fit: cover;
 }
 
-/* Text inside card */
+/* Text padding */
 .card h3 {
-  padding: .8rem .8rem .2rem .8rem;
-  margin: 0; /* resets default margin */
+  padding: .6rem .8rem .2rem .8rem;
+  margin: 0;
+  font-size: 1rem; /* smaller text for small cards */
 }
 
 .card p {
-  padding: 0 .8rem 1rem .8rem;
-  margin: 0; /* resets default margin */
+  padding: 0 .8rem .8rem .8rem;
+  margin: 0;
+  font-size: 0.875rem; /* uniform small text */
 }
 
 /* ===============================
