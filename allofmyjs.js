@@ -1,3 +1,15 @@
+// Burger menu toggle for mobile
+document.addEventListener('DOMContentLoaded', function () {
+  var navToggle = document.querySelector('.nav-toggle');
+  var mainNav = document.getElementById('main-nav');
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', function () {
+      mainNav.classList.toggle('open');
+      var expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !expanded);
+    });
+  }
+});
 // js/news.js
 
 // Select all expand buttons
