@@ -78,26 +78,16 @@ BURGER MENU (mobile only)
 =============================== */
 
 .burger {
-  /* .burger not used, keep for legacy but not needed */
-  display: none;
+  display: block;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: auto;
 }
 
 @media (min-width:768px) {
   .burger, .nav-toggle {
     display: none !important;
   }
-}
-
-/* Show nav-toggle (burger menu) on mobile */
-.nav-toggle {
-  display: block;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  margin-left: auto;
-}
 }
 
 /* ===============================
