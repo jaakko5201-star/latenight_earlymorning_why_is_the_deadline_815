@@ -1,330 +1,461 @@
-/* ===============================
-GLOBAL RESET
-=============================== */
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* ==============================
+   Global Reset & Base tyylit
+   ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-  font-family: Arial, sans-serif;
-  font-size:16px;
-  scroll-behavior:smooth;
+html {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
-body{
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
-  line-height:1.6;
-  color:#333;
-  background:#fdfdfd;
-}
-
-main{
-  flex:1;
-  padding:0 1rem;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-/* ===============================
-HEADER
-=============================== */
-
-header{
-  background:#1e90ff;
-  color:white;
-  padding:1rem;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-}
-
-header h1{
-  font-size:1.8rem;
-  margin-bottom:.5rem;
-}
-
-nav{
-  display:flex;
-  gap:1rem;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  padding:.4rem .8rem;
-  border-radius:4px;
-  transition:background .3s;
-}
-
-nav a:hover,
-nav a:focus{
-  background:#0f70d0;
-}
-
-/* ===============================
-HERO SECTION
-=============================== */
-
-.hero{
-  position:relative;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  color:white;
-  overflow:hidden;
-  min-height:50vh;
-}
-
-.hero img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.hero-text{
-  position:relative;
-  background:rgba(30,144,255,0.75);
-  padding:1.5rem;
-  border-radius:10px;
-  width:90%;
-  max-width:800px;
-}
-
-.hero h2{
-  font-size:1.6rem;
-  margin-bottom:.5rem;
-}
-
-.hero p{
-  font-size:1rem;
-}
-
-/* ===============================
-ROUTES / NEWS CARDS - Uniform Size & Two Columns Desktop
-=============================== */
-
-.card-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr; /* mobile first */
-  max-width: 1000px; /* limits total grid width */
-  margin: 0 auto;    /* center grid */
-}
-
-@media (min-width: 768px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr); /* two columns on tablets/desktops */
-  }
-}
-
-@media (min-width: 1200px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr); /* optional three columns on large screens */
-  }
-}
-
-/* Card styling */
-.card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform .3s, box-shadow .3s;
-  width: 100%;
+body {
   display: flex;
-  flex-direction: column; /* ensures image on top, text below */
+  flex-direction: column;
+  min-height: 100%;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fdfdfd;
 }
 
-/* Hover effect */
-.card:hover {
+main {
+  flex: 1;
+}
+
+/* ==============================
+   Header ja navigaatio
+   ============================== */
+header {
+  background-color: #1e90ff;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+header nav a:hover,
+header nav a:focus {
+  background-color: #0f70d0;
+}
+
+/* ==============================
+   Hero kuva osiot
+   ============================== */
+.hero {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* only the image-backed hero needs a height; contact page uses text-only hero */
+.hero:not(.hero-text-only) {
+  min-height: 55vh;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* hero used on pages with no background photo (contact) */
+.hero.hero-text-only {
+  background-color: #1e90ff;
+  padding: 2rem 1rem;      /* reduce vertical height */
+  margin-top: 1rem;        /* separate from navbar when same color */
+}
+
+.hero.hero-text-only .hero-text {
+  position: static;
+  transform: none;
+  background: none;
+  color: white;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 599px) {
+  .hero:not(.hero-text-only) {
+    min-height: 45vh;
+  }
+
+  .hero .hero-text {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+.hero .hero-text {
+  position: relative;
+  background: rgba(30,144,255,0.7);
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* ==============================
+   Cards (Routes, News, etc.)
+   ============================== */
+.featured-routes {
+  margin-top: 6rem; /* twice the space under hero */
+}
+
+/* ==============================
+   Station Highlights (Home page unique section)
+   ============================== */
+.featured-stations {
+  margin-top: 6rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3.5rem; /* room for the moving train */
+}
+
+.station-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.station-card {
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.station-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* Photo container */
-.photo-container {
-  width: 100%;
-  aspect-ratio: 16/9; /* ensures all images have same height relative to width */
-  overflow: hidden;
-  flex-shrink: 0;      /* prevents shrinking */
+.station-card img {
+  transition: transform 0.3s;
 }
 
-.photo-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* crops images consistently */
+.station-card:hover img {
+  transform: scale(1.05);
 }
 
-/* Text inside card */
+
+@media (min-width: 768px) {
+  .station-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .station-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 500px;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
 .card h3 {
-  padding: .6rem .8rem .2rem .8rem;
-  margin: 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .card p {
-  padding: 0 .8rem ..8rem .8rem;
-  margin: 0;
-  font-size: 0.875rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
-/* ===============================
-BUTTONS
-=============================== */
 
-.btn{
-  display:inline-block;
-  background:#1e90ff;
-  color:white;
-  padding:.6rem 1.2rem;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
+.btn {
+  display: inline-block;
+  background-color: #1e90ff;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 0.5rem;
 }
 
 .btn:hover,
-.btn:focus{
-  background:#0f70d0;
+.btn:focus {
+  background-color: #0f70d0;
 }
 
-/* ===============================
-MUST VISIT STATIONS
-=============================== */
-
-.featured-stations{
-  margin-top:4rem;
+/* ==============================
+   Expandable Calendar/News Buttons
+   ============================== */
+.expand-news {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
 
-.station-grid{
-  display:grid;
-  gap:1.5rem;
-  grid-template-columns:1fr;
+.expand-news:hover,
+.expand-news:focus {
+  background-color: #e5533d;
 }
 
-.station-card{
-  background:white;
-  border-radius:10px;
-  box-shadow:0 4px 8px rgba(0,0,0,0.1);
-  overflow:hidden;
-  transition:transform .3s, box-shadow .3s;
+.events.hidden {
+  display: none;
+  margin-top: 0.5rem;
 }
 
-.station-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+.events p {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
 }
 
-.station-card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
+/* ==============================
+   Lists (Travel Tips)
+   ============================== */
+ul {
+  list-style: disc inside;
+  margin: 1rem 0;
+  padding-left: 0;
 }
 
-.station-card h3{
-  padding:.8rem .8rem .2rem .8rem;
+/* ==============================
+   Forms
+   ============================== */
+form.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.station-card p{
-  padding:0 .8rem 1rem .8rem;
+form.card label {
+  font-weight: bold;
+  margin-top: 0.5rem;
 }
 
-/* ===============================
-FORMS
-=============================== */
-
-form.card{
-  display:flex;
-  flex-direction:column;
-  gap:.75rem;
+form.card input,
+form.card textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-input,
-textarea{
-  padding:.5rem;
-  border:1px solid #ccc;
-  border-radius:4px;
+form.card input:focus,
+form.card textarea:focus {
+  outline: 2px solid #1e90ff;
+  border-color: #1e90ff;
 }
 
-input:focus,
-textarea:focus{
-  outline:2px solid #1e90ff;
+form.card button {
+  align-self: flex-start;
+  cursor: pointer;
 }
 
-/* ===============================
-FOOTER
-=============================== */
-
-footer{
-  background:#1e90ff;
-  color:white;
-  text-align:center;
-  padding:1rem;
-  margin-top:2rem;
+ul li {
+  margin-bottom: 0.5rem;
 }
 
-/* ===============================
-ACCESSIBILITY
-=============================== */
-
-.skip-link{
-  position:absolute;
-  left:-999px;
-  top:0;
-  background:#1e90ff;
-  color:white;
-  padding:.5rem 1rem;
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  background-color: #1e90ff;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-.skip-link:focus{
-  left:0;
+/* ==============================
+   Accessibility helpers
+   ============================== */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #1e90ff;
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 0;
 }
 
-/* ===============================
-RESPONSIVE (mobile first)
-=============================== */
+footer a.footer-link {
+  color: white;
+  text-decoration: underline;
+}
 
-@media (min-width:600px){
-
-  header{
-    flex-direction:row;
-    justify-content:space-between;
+/* ==============================
+   Responsive: Mobile First
+   ============================== */
+/* base padding for small viewports */
+main {
+  padding: 0 1rem;
+}
+/* smaller heading in the hero on tiny screens */
+.hero .hero-text h2 {
+  font-size: 1.5rem;
+}
+@media (min-width: 600px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .hero-text{
-    padding:2rem;
+  .hero .hero-text {
+    padding: 3rem;
   }
 
-  .hero h2{
-    font-size:2rem;
+  .hero .hero-text h2 {
+    font-size: 2rem;
   }
 
+  .card {
+    max-width: 550px;
+  }
 }
 
-@media (min-width:768px){
-
-  .station-grid{
-    grid-template-columns:repeat(2,1fr);
+@media (min-width: 900px) {
+  .card {
+    max-width: 700px;
   }
 
+  .card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .card img {
+    width: 40%;
+    flex-shrink: 0;
+  }
+
+  .card .events {
+    margin-left: 1rem;
+  }
 }
 
-@media (min-width:1100px){
+/* Mobile navigation toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid white;
+  color: white;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
 
-  .station-grid{
-    grid-template-columns:repeat(4,1fr);
+@media (max-width: 899px) {
+  header {
+    align-items: flex-start;
   }
 
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  header nav {
+    display: none;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  header nav.open {
+    display: flex;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Desktop grid for cards */
+@media (min-width: 1100px) {
+  .route-cards,
+  .latest-news {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .route-cards h2,
+  .latest-news h2 {
+    grid-column: 1 / -1;
+  }
+
+  .card {
+    max-width: none;
+    margin: 0;
+  }
 }
