@@ -50,9 +50,9 @@ header {
 header h1 {
   font-size: 1.8rem;
   margin-bottom: .5rem;
-}
-
-nav {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -217,11 +217,12 @@ MUST VISIT STATIONS
 
 .featured-stations .btn {
   margin-top: 1.2rem;
-  margin-bottom: 2.2rem;
+  margin-top: 1.8rem;
+  margin-bottom: 2.8rem;
 }
 
 .latest-news {
-  margin-top: 0;
+  margin-top: 2.5rem;
 }
 
 .station-grid {
