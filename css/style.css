@@ -95,6 +95,9 @@ header h1 {
 
 nav a {
   color: white;
+}
+nav a:visited {
+  color: white;
   text-decoration: none;
   font-weight: bold;
   padding: .4rem .8rem;
