@@ -148,100 +148,37 @@ header nav a:focus {
   margin-top: 6rem; /* twice the space under hero */
 }
 
-/* ==============================
-   Station Highlights (Home page unique section)
-   ============================== */
-.featured-stations {
-  margin-top: 6rem;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 3.5rem; /* room for the moving train */
+/* =============================== MUST VISIT STATIONS =============================== */
+.featured-stations{
+  margin-top:4rem;
 }
-
-.station-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: 1fr;
+.station-grid{
+  display:grid;
+  gap:1.5rem;
+  grid-template-columns:1fr;
 }
-
-.station-card {
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+.station-card{
+  background:white;
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  overflow:hidden;
+  transition:transform .3s, box-shadow .3s;
 }
-
-.station-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+.station-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
 }
-
-.station-card img {
-  transition: transform 0.3s;
+.station-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
 }
-
-.station-card:hover img {
-  transform: scale(1.05);
+.station-card h3{
+  padding:.8rem .8rem .2rem .8rem;
 }
-
-
-@media (min-width: 768px) {
-  .station-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.station-card p{
+  padding:0 .8rem 1rem .8rem;
 }
-
-@media (min-width: 1200px) {
-  .station-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-.card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 1rem auto;
-  padding: 1rem;
-  max-width: 500px;
-  text-align: left;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
-}
-
-.card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.card p {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.btn {
-  display: inline-block;
-  background-color: #1e90ff;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  margin-top: 0.5rem;
-}
-
-.btn:hover,
-.btn:focus {
-  background-color: #0f70d0;
-}
-
 /* ==============================
    Expandable Calendar/News Buttons
    ============================== */
