@@ -103,11 +103,11 @@ HERO SECTION
   overflow: hidden;
   min-height: 28vh;
   margin-bottom: 1.5rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
 }
 
 .hero img {
@@ -116,7 +116,7 @@ HERO SECTION
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 .hero-text {
