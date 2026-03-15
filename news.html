@@ -14,7 +14,8 @@
   <!-- Header -->
   <header>
     <h1>Interrail Planner</h1>
-    <nav aria-label="Main navigation">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">☰</button>
+    <nav id="main-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="routes.html">Routes</a></li>
@@ -40,39 +41,39 @@
       <h2>Interrail Updates</h2>
 
       <div class="card calendar-day">
-        <img src="images/news/night-train.jpeg" alt="Interior of an overnight train" loading="lazy">
+        <img src="images/news/night-train.jpeg" alt="Night train arriving at a European station" loading="lazy">
         <h3>New Night Trains Across Europe</h3>
         <p>Several overnight train routes are returning in 2026, making night travel easier and scenic.</p>
-        <button class="expand-news" aria-expanded="false" aria-label="Expand details">+</button>
-        <div class="events hidden">
+        <button class="expand-news" aria-expanded="false" aria-controls="news1-details" aria-label="Expand details">+</button>
+        <div id="news1-details" class="events hidden" aria-hidden="true">
           <p>Route examples: Paris–Berlin, Vienna–Rome, Amsterdam–Prague.</p>
           <p>Tickets and seats must be reserved in advance.</p>
         </div>
-        <a href="https://www.interrail.eu/en/blog" target="_blank" class="btn">Read More</a>
+        <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">Read More</a>
       </div>
 
       <div class="card calendar-day">
-        <img src="images/news/pass-prices.jpg" alt="Interrail pass and price list" loading="lazy">
+        <img src="images/news/pass-prices.jpg" alt="Interrail pass prices displayed on a smartphone" loading="lazy">
         <h3>2026 Interrail Pass Prices Released</h3>
         <p>The new Interrail pass prices are out! Plan ahead to get the best deals.</p>
-        <button class="expand-news" aria-expanded="false" aria-label="Expand details">+</button>
-        <div class="events hidden">
+        <button class="expand-news" aria-expanded="false" aria-controls="news2-details" aria-label="Expand details">+</button>
+        <div id="news2-details" class="events hidden" aria-hidden="true">
           <p>Pricing varies by age, country, and travel class.</p>
           <p>Check for early-bird discounts online.</p>
         </div>
-        <a href="https://www.interrail.eu/en/blog" target="_blank" class="btn">Read More</a>
+        <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">Read More</a>
       </div>
 
       <div class="card calendar-day">
-        <img src="images/news/travel-advisory.jpg" alt="Travel advisory sign" loading="lazy">
+        <img src="images/news/travel-advisory.jpg" alt="Traveler checking a mobile travel advisory map" loading="lazy">
         <h3>Travel Advisory Updates</h3>
         <p>Be aware of seasonal schedule changes and COVID-related travel regulations.</p>
-        <button class="expand-news" aria-expanded="false" aria-label="Expand details">+</button>
-        <div class="events hidden">
+        <button class="expand-news" aria-expanded="false" aria-controls="news3-details" aria-label="Expand details">+</button>
+        <div id="news3-details" class="events hidden" aria-hidden="true">
           <p>Always check the official Interrail site before booking.</p>
           <p>Some routes may have limited service in winter months.</p>
         </div>
-        <a href="https://www.interrail.eu/en/blog" target="_blank" class="btn">Read More</a>
+        <a href="https://www.interrail.eu/en/blog" target="_blank" rel="noopener noreferrer" class="btn">Read More</a>
       </div>
 
     </section>
