@@ -108,14 +108,20 @@ nav a:focus {
 }
 
 /* ===============================
+
+/* ===============================
 BURGER MENU (mobile only)
 =============================== */
 
-.burger {
+.nav-toggle {
   display: block;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
   cursor: pointer;
-  font-size: 1.5rem;
-  margin-left: auto;
+  margin: 0.5rem 0 0.5rem auto;
+  z-index: 20;
 }
 
 @media (min-width:768px) {
