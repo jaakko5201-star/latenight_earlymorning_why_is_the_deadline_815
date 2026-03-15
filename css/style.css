@@ -1,6 +1,7 @@
-/* ==============================
-   Global Reset
-   ============================== */
+/* ===============================
+GLOBAL RESET
+=============================== */
+
 *{
   margin:0;
   padding:0;
@@ -32,31 +33,33 @@ img{
   display:block;
 }
 
-/* ==============================
-   Header & Navigation
-   ============================== */
+/* ===============================
+HEADER
+=============================== */
+
 header{
   background:#1e90ff;
   color:white;
-  padding:1rem 2rem;
+  padding:1rem;
   display:flex;
   flex-direction:column;
   align-items:center;
+  text-align:center;
 }
 
 header h1{
-  font-size:2rem;
+  font-size:1.8rem;
   margin-bottom:.5rem;
 }
 
-header nav{
+nav{
   display:flex;
   gap:1rem;
   flex-wrap:wrap;
   justify-content:center;
 }
 
-header nav a{
+nav a{
   color:white;
   text-decoration:none;
   font-weight:bold;
@@ -65,25 +68,22 @@ header nav a{
   transition:background .3s;
 }
 
-header nav a:hover,
-header nav a:focus{
+nav a:hover,
+nav a:focus{
   background:#0f70d0;
 }
 
-/* ==============================
-   Hero Section
-   ============================== */
+/* ===============================
+HERO SECTION
+=============================== */
+
 .hero{
   position:relative;
   display:grid;
-  align-items:center;
-  justify-items:center;
+  place-items:center;
   text-align:center;
   color:white;
   overflow:hidden;
-}
-
-.hero:not(.hero-text-only){
   min-height:50vh;
 }
 
@@ -113,11 +113,12 @@ header nav a:focus{
   font-size:1rem;
 }
 
-/* ==============================
-   Cards
-   ============================== */
+/* ===============================
+CARDS
+=============================== */
+
 .card{
-  background:#fff;
+  background:white;
   border-radius:10px;
   box-shadow:0 4px 8px rgba(0,0,0,0.1);
   margin:1rem auto;
@@ -137,18 +138,10 @@ header nav a:focus{
   margin-bottom:.5rem;
 }
 
-.card h3{
-  font-size:1.4rem;
-  margin-bottom:.4rem;
-}
+/* ===============================
+BUTTONS
+=============================== */
 
-.card p{
-  font-size:.95rem;
-}
-
-/* ==============================
-   Buttons
-   ============================== */
 .btn{
   display:inline-block;
   background:#1e90ff;
@@ -164,11 +157,12 @@ header nav a:focus{
   background:#0f70d0;
 }
 
-/* ==============================
-   Must Visit Railway Stations
-   ============================== */
+/* ===============================
+MUST VISIT STATIONS
+=============================== */
+
 .featured-stations{
-  margin-top:5rem;
+  margin-top:4rem;
 }
 
 .station-grid{
@@ -178,9 +172,10 @@ header nav a:focus{
 }
 
 .station-card{
-  overflow:hidden;
+  background:white;
   border-radius:10px;
   box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  overflow:hidden;
   transition:transform .3s, box-shadow .3s;
 }
 
@@ -189,50 +184,50 @@ header nav a:focus{
   box-shadow:0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* IMPORTANT: consistent image sizing */
+/* IMPORTANT: force identical image sizes */
+
 .station-card img{
   width:100%;
-  height:200px;
+  height:180px;
   object-fit:cover;
-  transition:transform .3s;
 }
 
-.station-card:hover img{
-  transform:scale(1.05);
-}
+/* text spacing */
 
 .station-card h3{
-  padding:.8rem;
+  padding:.8rem .8rem .2rem .8rem;
 }
 
 .station-card p{
   padding:0 .8rem 1rem .8rem;
 }
 
-/* ==============================
-   Forms
-   ============================== */
+/* ===============================
+FORMS
+=============================== */
+
 form.card{
   display:flex;
   flex-direction:column;
   gap:.75rem;
 }
 
-form input,
-form textarea{
+input,
+textarea{
   padding:.5rem;
   border:1px solid #ccc;
   border-radius:4px;
 }
 
-form input:focus,
-form textarea:focus{
+input:focus,
+textarea:focus{
   outline:2px solid #1e90ff;
 }
 
-/* ==============================
-   Footer
-   ============================== */
+/* ===============================
+FOOTER
+=============================== */
+
 footer{
   background:#1e90ff;
   color:white;
@@ -241,9 +236,10 @@ footer{
   margin-top:2rem;
 }
 
-/* ==============================
-   Accessibility
-   ============================== */
+/* ===============================
+ACCESSIBILITY
+=============================== */
+
 .skip-link{
   position:absolute;
   left:-999px;
@@ -257,9 +253,9 @@ footer{
   left:0;
 }
 
-/* ==============================
-   Responsive Layout
-   ============================== */
+/* ===============================
+RESPONSIVE (mobile first)
+=============================== */
 
 @media (min-width:600px){
 
