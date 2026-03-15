@@ -114,26 +114,20 @@ HERO SECTION
 }
 
 /* ===============================
-ROUTES / NEWS CARDS - Uniform Size & Two Columns Desktop
+ROUTES / NEWS CARDS - Small Uniform Cards
 =============================== */
 
 .card-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr; /* mobile first */
-  max-width: 1000px; /* limits total grid width */
-  margin: 0 auto;    /* center grid */
+  grid-template-columns: 1fr; /* mobile first: single column */
+  max-width: 700px;           /* center and limit grid width */
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .card-grid {
-    grid-template-columns: repeat(2, 1fr); /* two columns on tablets/desktops */
-  }
-}
-
-@media (min-width: 1200px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr); /* optional three columns on large screens */
+    grid-template-columns: repeat(2, 1fr); /* two cards side by side */
   }
 }
 
@@ -144,9 +138,9 @@ ROUTES / NEWS CARDS - Uniform Size & Two Columns Desktop
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform .3s, box-shadow .3s;
-  width: 100%;
+  width: 100%;               /* fill grid cell */
   display: flex;
-  flex-direction: column; /* ensures image on top, text below */
+  flex-direction: column;
 }
 
 /* Hover effect */
@@ -158,15 +152,14 @@ ROUTES / NEWS CARDS - Uniform Size & Two Columns Desktop
 /* Photo container */
 .photo-container {
   width: 100%;
-  aspect-ratio: 16/9; /* ensures all images have same height relative to width */
+  height: 140px;             /* fixed, uniform height */
   overflow: hidden;
-  flex-shrink: 0;      /* prevents shrinking */
 }
 
 .photo-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* crops images consistently */
+  object-fit: cover;         /* crops images nicely */
 }
 
 /* Text inside card */
@@ -177,11 +170,10 @@ ROUTES / NEWS CARDS - Uniform Size & Two Columns Desktop
 }
 
 .card p {
-  padding: 0 .8rem ..8rem .8rem;
+  padding: 0 .8rem .8rem .8rem;
   margin: 0;
   font-size: 0.875rem;
 }
-
 /* ===============================
 BUTTONS
 =============================== */
