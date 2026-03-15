@@ -114,53 +114,62 @@ HERO SECTION
 }
 
 /* ===============================
-ROUTES / NEWS CARDS - Small Uniform Cards
+ROUTES / NEWS CARDS - Uniform Size & Two Columns Desktop
 =============================== */
 
 .card-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr; /* mobile first: single column */
-  max-width: 700px;           /* grid won’t stretch endlessly */
-  margin: 0 auto;             /* center the grid */
+  grid-template-columns: 1fr; /* mobile first */
+  max-width: 1000px; /* limits total grid width */
+  margin: 0 auto;    /* center grid */
 }
 
 @media (min-width: 768px) {
   .card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* two columns */
+    grid-template-columns: repeat(2, 1fr); /* two columns on tablets/desktops */
   }
 }
 
+@media (min-width: 1200px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); /* optional three columns on large screens */
+  }
+}
+
+/* Card styling */
 .card {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform .3s, box-shadow .3s;
-  width: 100%;         /* fill grid cell only */
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  max-width: 300px;    /* prevents card from stretching too big */
-  margin: 0 auto;      /* centers card inside grid cell */
+  flex-direction: column; /* ensures image on top, text below */
 }
 
+/* Hover effect */
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
+/* Photo container */
 .photo-container {
   width: 100%;
-  height: 140px;       /* uniform height for all cards */
+  aspect-ratio: 16/9; /* ensures all images have same height relative to width */
   overflow: hidden;
+  flex-shrink: 0;      /* prevents shrinking */
 }
 
 .photo-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* crops images nicely */
+  object-fit: cover; /* crops images consistently */
 }
 
+/* Text inside card */
 .card h3 {
   padding: .6rem .8rem .2rem .8rem;
   margin: 0;
@@ -168,7 +177,7 @@ ROUTES / NEWS CARDS - Small Uniform Cards
 }
 
 .card p {
-  padding: 0 .8rem .8rem .8rem;
+  padding: 0 .8rem ..8rem .8rem;
   margin: 0;
   font-size: 0.875rem;
 }
